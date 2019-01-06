@@ -1,0 +1,41 @@
+﻿<Window x:Class="MultiThreadRSSReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiThreadRSSReader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="BUpdateItem_Click">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Title:" HorizontalContentAlignment="Center" />
+            <Label Name="LTitle"/>
+            <Label Content="Category:" HorizontalContentAlignment="Center" />
+            <Label Name="LCategory"/>
+            <Label Content="URL:" HorizontalContentAlignment="Center" />
+            <Label Name="LURL"/>
+            <Label Content="Publish date:" HorizontalContentAlignment="Center" />
+            <Label Name="LDate"/>
+            <Button Name="BRead" Content="Read" Click="BRead_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Enter category to find news by:"/>
+                <TextBox Name="TBCategory"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Enter email to get updates:"/>
+                <TextBox Name="TBEmail" Text="polya_131@mail.ru"/>
+            </StackPanel>
+        <Button Name="BUpdateItem" Content="Update" Click="BUpdateItem_Click"/>
+            <ListBox Name="LBItems" SelectionChanged="LBItems_SelectionChanged">
+                <ScrollBar/>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

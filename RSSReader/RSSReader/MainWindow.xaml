@@ -1,0 +1,33 @@
+﻿<Window x:Class="RSSReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSSReader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700" Loaded="BUpdateItem_Click">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Title:" HorizontalContentAlignment="Center" />
+            <Label Name="LTitle"/>
+            <Label Content="Category:" HorizontalContentAlignment="Center" />
+            <Label Name="LCategory"/>
+            <Label Content="URL:" HorizontalContentAlignment="Center" />
+            <Label Name="LURL"/>
+            <Label Content="Publish date:" HorizontalContentAlignment="Center" />
+            <Label Name="LDate"/>
+            <Button Name="BRead" Content="Read" Click="BRead_Click"/>
+        </StackPanel>
+            
+        <StackPanel Grid.Column="1">
+            <Button Name="BUpdateItem" Content="Update" Click="BUpdateItem_Click"/>
+            <ListBox Name="LBItems" SelectionChanged="LBItems_SelectionChanged">
+                <ScrollBar/>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
